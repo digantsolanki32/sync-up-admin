@@ -18,21 +18,22 @@ export default function ResetPassword() {
         setError("");
         setIsSubmitting(true);
 
-        // Basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setError("Please enter a correct email");
-            setIsSubmitting(false);
-            return;
-        }
-
         try {
-            // Simulate API call with timeout
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            setIsEmailSent(true);
+            // Simulate API call with a short delay for better UX
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            if (email === "admin@admin.com") {
+                // If the email is correct, show the success message
+                setIsEmailSent(true);
+            } else {
+                // If the email is incorrect, show an error
+                setError("Wrong email entered");
+            }
         } catch (err) {
+            // General error handler for unexpected issues
             setError("An error occurred. Please try again later.");
         } finally {
+            // Reset the submitting state regardless of the outcome
             setIsSubmitting(false);
         }
     };
