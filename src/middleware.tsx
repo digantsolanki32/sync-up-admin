@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const protectedRoutes = ["/", "/profile", "/calendar", "/blank", "/(admin)", "/(admin)/dashboard", "/BasicTables", "/FormElements", "/(charts)"];
+const protectedRoutes = ["/", "/profile", "/calendar", "/blank", "/(admin)", "/(admin)/dashboard", "/BasicTables", "/FormElements", "/(charts)", "/form-elements", "/basic-tables", "/line-chart", "/bar-chart", "/alerts", "/badge", "/buttons", "/images", "/videos" ];
 
 // This function will run on specified routes to check for authentication.
 export function middleware(req: NextRequest) {
@@ -23,5 +23,5 @@ export function middleware(req: NextRequest) {
 // Use a matcher to specify which routes the middleware should run on.
 // This is more efficient than running it on every single request.
 export const config = {
-    matcher: ['/', '/dashboard/:path*', "/profile", "/calendar", "/blank", "/(admin)", "/(admin)/dashboard", "/BasicTables", "/FormElements", "/(charts)"] // Example: protects the homepage and all dashboard routes
+    matcher: ['/', '/dashboard/:path*', "/profile", "/calendar", "/blank", "/(admin)", "/(admin)/dashboard", "/BasicTables", "/FormElements", "/(charts)", "/form-elements", "/basic-tables", "/line-chart", "/bar-chart", "/alerts", "/badge", "/buttons", "/images", "/videos"] // Example: protects the homepage and all dashboard routes
 };
