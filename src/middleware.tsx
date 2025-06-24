@@ -23,5 +23,5 @@ export function middleware(req: NextRequest) {
 // Use a matcher to specify which routes the middleware should run on.
 // This is more efficient than running it on every single request.
 export const config = {
-    matcher: ['/', '/dashboard/:path*', "/profile", "/calendar", "/blank", "/(admin)", "/(admin)/dashboard", "/BasicTables", "/FormElements", "/(charts)", "/form-elements", "/basic-tables", "/line-chart", "/bar-chart", "/alerts", "/badge", "/buttons", "/images", "/videos", "avatars"] // Example: protects the homepage and all dashboard routes
+    matcher: ['/', '/dashboard/:path*', "/profile", "/calendar", "/blank", "/(admin)", "/(admin)/dashboard", "/BasicTables", "/FormElements", "/(charts)", "/form-elements", "/basic-tables", "/line-chart", "/bar-chart", "/alerts", "/badge", "/buttons", "/images", "/videos", "/avatars"] // Example: protects the homepage and all dashboard routes
 };
